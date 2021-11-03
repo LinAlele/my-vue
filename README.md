@@ -36,3 +36,20 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 git push -u origin main
 
 ```
+
+#### 关于OpenSSL SSL_connect: Connection was reset in connection to github.com:443解决方案
+``` bash
+## 第一种
+# git config --global http.sslBackend "openssl"
+# git config --global http.sslCAInfo "C:\Program Files\Git\mingw64\ssl\cert.pem"
+
+## 第二种就是公司不允许访问github 这个时候我们使用VPN将代理设置为7890
+# git config --global http.proxy 127.0.0.1:7890
+# git config --global https.proxy 127.0.0.1:7890
+
+## 查看代理配置
+# git config --global http.proxy #查看git的http代理配置
+# git config --global https.proxy #查看git的https代理配置
+# git config --global -l #查看git的所有配置
+```
+
